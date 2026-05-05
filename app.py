@@ -47,7 +47,7 @@ def get_sheet_url() -> str:
     return str(url).strip()
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=600)
 def load_from_url(url: str) -> pd.DataFrame:
     """Load the Google Sheet CSV. Cached for 1 hour."""
     return pd.read_csv(url)
